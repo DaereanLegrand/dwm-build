@@ -2,8 +2,8 @@
 #include "/home/daerean/.cache/wal/colors-wal-dwm.h"
 
 /* appearance */
-static const unsigned int borderpx  = 20;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int gappx     = 8;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -99,9 +99,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,       setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,       setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,       setgaps,        {.i = 0  } },
-    { MODKEY|ShiftMask,             XK_minus, 		setborderpx,    {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_plus, 		setborderpx,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_numbersign, 	setborderpx,    {.i = 0 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
