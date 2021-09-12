@@ -1183,10 +1183,8 @@ manage(Window w, XWindowAttributes *wa)
 	c->win = w;
 	/* geometry */
 
-    c->x = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
-	c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
-    //c->x = c->oldx = wa->x;
-    //c->y = c->oldy = wa->y;
+    c->x = c->oldx = wa->x;
+    c->y = c->oldy = wa->y;
     c->w = c->oldw = wa->width;
     c->h = c->oldh = wa->height;
     c->oldbw = wa->border_width;
@@ -1217,6 +1215,8 @@ manage(Window w, XWindowAttributes *wa)
 	updatewindowtype(c);
 	updatesizehints(c);
 	updatewmhints(c);
+    c->x = c->oldx = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
+	c->y = c->oldy = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
 	c->sfx = c->x;
 	c->sfy = c->y;
 	c->sfw = c->w;
