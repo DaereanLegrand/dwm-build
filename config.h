@@ -3,7 +3,7 @@
 #include "/home/daerean/.cache/wal/colors-wal-dwm.h"
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -34,15 +34,16 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                instance    title                   tags mask     isfloating   CenterThisWindow     monitor */
-	{ "fceux",              NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "transformice",       NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "confirmreset",       NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "makebranch",         NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "maketag",            NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "ssh-askpass",        NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ NULL,                 NULL,       "Picture in picture",   0,            1,           0,                   -1 },
-    { "spotify",            NULL,       NULL,                   1<<8,         0,           1,                   -1 },
+	/* class                instance    title                                       tags mask     isfloating      CenterThisWindow    monitor */
+	{ "fceux",              NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "transformice",       NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "confirmreset",       NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "makebranch",         NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "maketag",            NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "ssh-askpass",        NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ NULL,                 NULL,       "Picture in picture",                       0,              1,              0,                  -1 },
+    { "spotify",            NULL,       NULL,                                       1<<8,           0,              1,                  -1 },
+    { NULL,                 NULL,       "Android Emulator - Pixel_5_API_30:5554",   0,              1,              0,                  -1 },
 };
 
 /* layout(s) */

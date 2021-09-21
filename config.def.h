@@ -34,15 +34,16 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                instance    title                   tags mask     isfloating   CenterThisWindow     monitor */
-	{ "fceux",              NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "transformice",       NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "confirmreset",       NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "makebranch",         NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "maketag",            NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ "ssh-askpass",        NULL,       NULL,                   0,            1,           0,                   -1 },
-	{ NULL,                 NULL,       "Picture in picture",   0,            1,           0,                   -1 },
-    { "spotify",            NULL,       NULL,                   1<<8,         0,           1,                   -1 },
+	/* class                instance    title                                       tags mask     isfloating      CenterThisWindow    monitor */
+	{ "fceux",              NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "transformice",       NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "confirmreset",       NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "makebranch",         NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "maketag",            NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ "ssh-askpass",        NULL,       NULL,                                       0,              1,              0,                  -1 },
+	{ NULL,                 NULL,       "Picture in picture",                       0,              1,              0,                  -1 },
+    { "spotify",            NULL,       NULL,                                       1<<8,           0,              1,                  -1 },
+    { NULL,                 NULL,       "Android Emulator - Pixel_5_API_30:5554",   0,              1,              0,                  -1 },
 };
 
 /* layout(s) */
