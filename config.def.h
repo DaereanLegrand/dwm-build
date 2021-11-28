@@ -3,7 +3,7 @@
 #include "/home/daerean/.cache/wal/colors-wal-dwm.h"
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -23,6 +23,7 @@ static const char *const autostart[] = {
     "volctl", NULL,
     "playerctld", "daemon", NULL,
     "sh", "/home/daerean/Scripts/dwmScript", NULL,
+    "xbanish", NULL,
 	NULL /* terminate */
 };
 
@@ -84,6 +85,9 @@ static const char *playernext[] = { "playerctl", "next", NULL };
 static const char *playermute[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *playerless[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *playermore[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *changekblayout[] = { "changeKBLayout", NULL };
+static const char *brightnessdown[] = { "ddcutil", "setvcp", "10", "-", "10", NULL };
+static const char *brightnessup[] = { "ddcutil", "setvcp", "10", "+", "10", NULL };
 
 
 static Key keys[] = {
@@ -109,6 +113,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_c,                       setlayout,      {.v = &layouts[3]} },
     { MODKEY,                       XK_space,                   setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                   togglefloating, {0} },
+    { MODKEY|ControlMask,           XK_space,                   spawn,          {.v = changekblayout } },
 	{ MODKEY,                       XK_0,                       view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,                       tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,                   focusmon,       {.i = -1 } },
@@ -125,6 +130,8 @@ static Key keys[] = {
     { 0,                            XF86XK_AudioMute,           spawn,          {.v = playermute } },
     { 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = playerless } },
     { 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = playermore } },
+    { MODKEY,                       XF86XK_AudioLowerVolume,    spawn,          {.v = brightnessdown } },
+    { MODKEY,                       XF86XK_AudioRaiseVolume,    spawn,          {.v = brightnessup } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
